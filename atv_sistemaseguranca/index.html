@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sistema de Segurança com Bloqueio</title>
+  </head>
+  <body>
+    <header>
+      <p class="badge">// sistema seguro v2.0</p>
+      <h1>CYBER-SENAI</h1>
+      <p>TERMINAL DE AUTENTICAÇÃO — ACESSO RESTRITO</p>
+    </header>
+
+    <main>
+      <div class="terminal-bar" role="presentation">
+        <div class="dots" aria-hidden="true">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+        </div>
+        <output id="clock" aria-live="polite"></output>
+      </div>
+
+      <!-- SEÇÃO DE LOGIN -->
+      <section class="login-section" aria-label="Formulário de autenticação">
+        <p class="lives-label">// TENTATIVAS RESTANTES</p>
+        <ul class="lives" id="lives" aria-label="Vidas restantes" role="list">
+          <li class="active" aria-label="vida 1">♥</li>
+          <li class="active" aria-label="vida 2">♥</li>
+          <li class="active" aria-label="vida 3">♥</li>
+        </ul>
+
+        <form id="login-form" novalidate>
+          <fieldset>
+            <legend>credenciais</legend>
+
+            <div class="field">
+              <label for="inp-login">// LOGIN</label>
+              <input
+                type="text"
+                id="inp-login"
+                name="login"
+                placeholder="usuário"
+                autocomplete="username"
+                required
+                spellcheck="false"
+              />
+            </div>
+
+            <div class="field">
+              <label for="inp-senha">// SENHA</label>
+              <input
+                type="password"
+                id="inp-senha"
+                name="senha"
+                placeholder="••••••••"
+                autocomplete="current-password"
+                required
+              />
+            </div>
+          </fieldset>
+
+          <button type="submit" id="btn-entrar">
+            <span>Autenticar</span>
+          </button>
+
+          <output
+            id="status-msg"
+            class="status-msg"
+            for="inp-login inp-senha"
+            aria-live="assertive"
+            aria-atomic="true"
+          ></output>
+        </form>
+      </section>
+
+      <!-- SEÇÃO DE RESULTADO -->
+      <section
+        class="result-section"
+        id="result-section"
+        aria-label="Resultado da autenticação"
+        aria-live="polite"
+      >
+        <figure class="result-icon" id="res-icon" aria-hidden="true"></figure>
+        <h2 class="result-title" id="res-title"></h2>
+        <p class="result-sub" id="res-sub"></p>
+        <button id="btn-reset">
+          [ reiniciar terminal ]
+        </button>
+      </section>
+    </main>
+
+    <footer>
+      <small>CYBER-SENAI &copy; 2025</small>
+      <small>STATUS: <span id="status-badge">AGUARDANDO</span></small>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
