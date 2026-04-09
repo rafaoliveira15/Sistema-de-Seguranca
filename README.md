@@ -170,8 +170,3 @@ Projeto desenvolvido para prática de:
 
 Estudante de Desenvolvimento de Sistemas  
 
-
-
-```
-> Acesso autorizado... bem-vindo ao sistema 👾
-```
